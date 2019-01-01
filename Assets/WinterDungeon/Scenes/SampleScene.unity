@@ -1149,6 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b758409c559aed4d854baf16aceaaae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0.1
 --- !u!4 &1944201986
 Transform:
   m_ObjectHideFlags: 0
@@ -1206,10 +1207,6 @@ Prefab:
       propertyPath: navmap
       value: 
       objectReference: {fileID: 953456085}
-    - target: {fileID: 1715618837631420, guid: b28d982c02b9a9744a821fed90aa19c5, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b28d982c02b9a9744a821fed90aa19c5, type: 2}
   m_IsPrefabAsset: 0

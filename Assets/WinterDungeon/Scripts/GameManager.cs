@@ -58,7 +58,19 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void RemoveCharacter (DungeonCharacter character) {
-
+		switch (character.faction) {
+			case CharacterFaction.PLAYER:
+				Players.Remove (character);
+				break;
+			case CharacterFaction.FRIENDLY:
+				Friendlies.Remove (character);
+				break;
+			case CharacterFaction.ENEMY:
+				Enemies.Remove (character);
+				break;
+			default:
+				break;
+		}
 	}
 
 	//Called whenever a character is moved/attacked etc
@@ -116,7 +128,8 @@ public class GameManager : MonoBehaviour {
 	void EnemyTurnEnter () {
 		AllowAllMove (Enemies);
 		if (Enemies.Count == 0) {
-			dungeonStateMachine.ChangeState ((int) CharacterFaction.PLAYER);
+			StartCoroutine (WaitPlayerState ());
+			//dungeonStateMachine.ChangeState ((int) CharacterFaction.PLAYER);
 		}
 	}
 

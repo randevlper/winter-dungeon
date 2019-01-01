@@ -125,19 +125,18 @@ MonoBehaviour:
   tileNavAgent: {fileID: 114307320784507904}
   damageableBody: {fileID: 114774801760682646}
   faction: 3
-  moveCoolDown: 0.1
   meleeDamage: 1
   meleeRange: 1
   combatMask:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 256
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

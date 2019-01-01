@@ -12,14 +12,18 @@ public class DungeonCharacter : MonoBehaviour {
 		get { return hasMoved; }
 		set { hasMoved = value; }
 	}
-	
+
 	public float meleeDamage = 1;
 	public float meleeRange = 1.0f;
 
 	public ContactFilter2D combatMask;
 	public LayerMask navigationMask;
 
-	Vector2 facingDir;
+	[SerializeField] Vector2 facingDir;
+	public Vector2 FacingDir {
+		set { facingDir = value; }
+		get { return facingDir; }
+	}
 
 	void Awake () {
 		hits = new RaycastHit2D[4];
@@ -32,6 +36,11 @@ public class DungeonCharacter : MonoBehaviour {
 		GameManager.instance.AddCharacter (this);
 	}
 
+	void Update()
+	{
+		Debug.DrawLine(transform.position, transform.position + (Vector3)FacingDir, Color.cyan);
+	}
+
 	public bool Move (Vector2 dir) {
 		if (!hasMoved && (dir != Vector2.zero)) {
 			//Need to check where they are moving to see if they should attack/melee
@@ -39,7 +48,7 @@ public class DungeonCharacter : MonoBehaviour {
 
 			if (!hit) {
 				tileNavAgent.Move (dir);
-				facingDir = dir.normalized;
+				FacingDir = dir.normalized;
 				//Debug invoke, should be replaced by the transition to the phase when the character moves
 				hasMoved = true;
 				GameManager.instance.Moved ();
@@ -52,11 +61,15 @@ public class DungeonCharacter : MonoBehaviour {
 
 	RaycastHit2D[] hits;
 	public void Attack () {
-		int numHits = Physics2D.Raycast (transform.position, facingDir, combatMask, hits, meleeRange);
+		int numHits = Physics2D.Raycast (transform.position, FacingDir, combatMask, hits, meleeRange);
+		Debug.Log(facingDir);
 		for (int i = 0; i < numHits; i++) {
+			Debug.Log(hits[i]);
 			IDamageable damageable = hits[i].collider.gameObject.GetComponent<IDamageable> ();
 			damageable?.Damage (new DamageInfo (meleeDamage));
 		}
+		hasMoved = true;
+		GameManager.instance.Moved();
 	}
 
 	void EnableMove () {
@@ -64,6 +77,7 @@ public class DungeonCharacter : MonoBehaviour {
 	}
 
 	void OnDeath (DamageInfo hit) {
+		GameManager.instance.RemoveCharacter (this);
 		gameObject.SetActive (false);
 	}
 
