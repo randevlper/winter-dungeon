@@ -37,9 +37,9 @@ GameObject:
   - component: {fileID: 4890865512817988}
   - component: {fileID: 114307320784507904}
   - component: {fileID: 114682792731504568}
-  - component: {fileID: 61136588383637786}
   - component: {fileID: 114774801760682646}
   - component: {fileID: 114585805366357744}
+  - component: {fileID: 58496707330917260}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -67,15 +67,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715618837631420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 2.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4505377847350596}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61136588383637786
-BoxCollider2D:
+--- !u!58 &58496707330917260
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -87,18 +87,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!114 &114307320784507904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,8 +132,20 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   navigationMask:
-    serializedVersion: 2
-    m_Bits: 311
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  facingDir: {x: 0, y: 0}
 --- !u!114 &114682792731504568
 MonoBehaviour:
   m_ObjectHideFlags: 1

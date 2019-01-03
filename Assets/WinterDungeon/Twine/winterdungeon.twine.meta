@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 1efc74b48e9a16f448a3f60376960971
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: TwineStory
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f0f5a2f845516ba46ad9d348ad3a08e3, type: 3}

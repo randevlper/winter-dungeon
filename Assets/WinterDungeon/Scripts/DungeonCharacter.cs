@@ -17,7 +17,7 @@ public class DungeonCharacter : MonoBehaviour {
 	public float meleeRange = 1.0f;
 
 	public ContactFilter2D combatMask;
-	public LayerMask navigationMask;
+	public ContactFilter2D navigationMask;
 
 	[SerializeField] Vector2 facingDir;
 	public Vector2 FacingDir {
@@ -44,17 +44,18 @@ public class DungeonCharacter : MonoBehaviour {
 	public bool Move (Vector2 dir) {
 		if (!hasMoved && (dir != Vector2.zero)) {
 			//Need to check where they are moving to see if they should attack/melee
-			RaycastHit2D hit = Physics2D.Raycast (transform.position, dir, 1f, navigationMask);
+			int numHits = Physics2D.Raycast (transform.position, dir, navigationMask, hits, 1f);
+			//bool canMove = false;
 
-			if (!hit) {
+			if (numHits <= 1) {
 				tileNavAgent.Move (dir);
 				FacingDir = dir.normalized;
 				//Debug invoke, should be replaced by the transition to the phase when the character moves
-				hasMoved = true;
-				GameManager.instance.Moved ();
 				//Invoke ("EnableMove", moveCoolDown);
-				return true;
 			}
+			hasMoved = true;
+			GameManager.instance.Moved ();
+			return true;
 		}
 		return false;
 	}
