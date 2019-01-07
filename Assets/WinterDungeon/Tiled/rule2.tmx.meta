@@ -1,0 +1,46 @@
+fileFormatVersion: 2
+guid: dc16c4551ba42ba44823c55e332f842c
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: _MapPrfab/rule2
+    100002: _MapPrfab/rule2/input_ground
+    100004: _MapPrfab/rule2/output_ground
+    100006: _MapPrfab/rule2/regions
+    400000: _MapPrfab/rule2/Transform
+    400002: _MapPrfab/rule2/input_ground/Transform
+    400004: _MapPrfab/rule2/output_ground/Transform
+    400006: _MapPrfab/rule2/regions/Transform
+    11400000: _MapPrfab/rule2/MonoBehaviour-SuperTiled2Unity.SuperMap
+    11400002: _MapPrfab/rule2/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400004: _MapPrfab/rule2/input_ground/MonoBehaviour-SuperTiled2Unity.SuperTileLayer
+    11400006: _MapPrfab/rule2/input_ground/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400008: _MapPrfab/rule2/output_ground/MonoBehaviour-SuperTiled2Unity.SuperTileLayer
+    11400010: _MapPrfab/rule2/output_ground/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400012: _MapPrfab/rule2/regions/MonoBehaviour-SuperTiled2Unity.SuperTileLayer
+    11400014: _MapPrfab/rule2/regions/MonoBehaviour-SuperTiled2Unity.SuperCustomProperties
+    11400016: _superAsset
+    100100000: _MapPrfab
+    2569400265252428796: _MapPrfab/rule2/Grid
+    3664157343022684176: _MapPrfab/rule2/input_ground/TilemapRenderer
+    3664157343022684178: _MapPrfab/rule2/output_ground/TilemapRenderer
+    3664157343022684180: _MapPrfab/rule2/regions/TilemapRenderer
+    8195094279510102542: _MapPrfab/rule2/input_ground/Tilemap
+    8195094279510102544: _MapPrfab/rule2/output_ground/Tilemap
+    8195094279510102546: _MapPrfab/rule2/regions/Tilemap
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  errors: []
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  pixelsPerUnit: 16
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  tilesAsObjects: 0
+  importSorting: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets: []

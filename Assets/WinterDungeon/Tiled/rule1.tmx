@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="left-down" width="8" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
+ <tileset firstgid="1" source="dungeon_1_tilset_2.tsx"/>
+ <tileset firstgid="65" source="dungeon_1_tileset.tsx"/>
+ <layer id="4" name="regions" width="8" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgYGSAABiNDBjR5LGpwQeI0Y/PfloDAAmgAA0=
+  </data>
+ </layer>
+ <layer id="5" name="input_ground" width="8" height="8">
+  <properties>
+   <property name="StrictEmpty" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYCAMuNFoUgGl+mkJACCgAC0=
+  </data>
+ </layer>
+ <layer id="6" name="output_ground" width="8" height="8">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAMmKA0CxFqsQEhKC1Cpn5aAgAckAAt
+  </data>
+ </layer>
+</map>
